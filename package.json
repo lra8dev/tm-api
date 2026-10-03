@@ -8,7 +8,7 @@
   "scripts": {
     "start": "node dist/index.js",
     "dev": "tsx watch src/index.ts",
-    "build": "tsc && pnpm db:emit && pnpm db:migrate:apply",
+    "build": "tsup && pnpm db:emit && pnpm db:migrate:apply",
     "db:sign": "prisma db sign",
     "db:emit": "prisma contract emit",
     "db:migrate:plan": "prisma migration plan --name",
