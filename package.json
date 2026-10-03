@@ -1,0 +1,41 @@
+{
+  "name": "task-management-api",
+  "version": "1.0.0",
+  "description": "A simple task management API built with Node.js, Express, and Prisma.",
+  "main": "dist/index.js",
+  "type": "module",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "start": "node dist/index.js",
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc && db:emit &&  db:prisma:migrate:apply",
+    "db:sign": "prisma db sign",
+    "db:emit": "prisma contract emit",
+    "db:migrate:plan": "prisma migration plan --name",
+    "db:migrate:apply": "prisma db migrate",
+    "db:migration:status": "prisma migration status"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.32.1",
+  "devDependencies": {
+    "@prisma/cli-engine": "0.6.1",
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6",
+    "@types/jsonwebtoken": "^9.0.10",
+    "@types/node": "^26.6.3",
+    "prisma": "8.0.0-rc.19",
+    "tsx": "^4.23.15",
+    "typescript": "^6.0.0"
+  },
+  "dependencies": {
+    "@prisma/orm-postgres": "8.0.0-rc.13",
+    "bcryptjs": "^3.0.3",
+    "cors": "^2.8.6",
+    "dotenv": "^18.0.4",
+    "express": "^5.2.1",
+    "jsonwebtoken": "^9.0.3",
+    "zod": "^4.6.5"
+  }
+}

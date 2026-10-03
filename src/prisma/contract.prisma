@@ -1,0 +1,30 @@
+// use prisma-8
+// Contract inferred from the live database schema. Edit as needed, then run `prisma contract emit`.
+model User {
+  id        String            @id(map: "User_pkey") @default(uuid())
+  email     String            @unique(map: "User_email_key")
+  name      String?
+  password  String?
+  tasks     Task[]
+  updatedAt TimestamptzString @default(now())
+  createdAt TimestamptzString @default(now())
+}
+
+model Task {
+  id          String            @id(map: "Task_pkey") @default(uuid())
+  title       String
+  userId      String
+  status      TaskStatus        @default(pending)
+  description String?
+  updatedAt   TimestamptzString @default(now())
+  createdAt   TimestamptzString @default(now())
+  user        User              @relation(fields: [userId], references: [id], onDelete: Cascade, map: "Task_userId_fkey")
+
+  @@index([userId], name: "Task_userId_idx")
+}
+
+enum TaskStatus {
+  completed
+  pending
+  cancelled
+}
