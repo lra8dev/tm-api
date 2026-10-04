@@ -108,11 +108,10 @@ pnpm install
 
 ### Deploy to Vercel
 
-The compiled Express application is exported as the default export from
-`dist/index.js`, which allows Vercel to invoke it as a Node.js serverless
-function. Configure the required `NODE_ENV`, `JWT_SECRET`, and
-`DATABASE_URL` environment variables in the Vercel project settings, then
-deploy from the repository root.
+The Express application is exported from `api/index.ts`, which Vercel detects
+as a Node.js serverless function. Configure the required `NODE_ENV`,
+`JWT_SECRET`, and `DATABASE_URL` environment variables in the Vercel project
+settings, then deploy from the repository root.
 
 Database connections are established lazily for API requests and reused while
 the serverless instance remains warm. The `/health` endpoint does not require a
