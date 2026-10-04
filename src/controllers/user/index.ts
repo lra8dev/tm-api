@@ -2,7 +2,7 @@ import type { Request, Response } from "express";
 import { db } from "../../prisma/db";
 import { userUpdateSchema } from "../../validators/user";
 import { ResponseHandler } from "../../utils";
-import { envConfig } from "../../lib";
+import { envConfig } from "../../lib/env-parser";
 
 export class UserController {
   static async getUserById(req: Request, res: Response): Promise<void> {

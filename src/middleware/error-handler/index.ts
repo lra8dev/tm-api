@@ -1,7 +1,7 @@
 // error handler middleware
 import type { NextFunction, Response, Request } from "express";
 import { ResponseHandler } from "../../utils";
-import { envConfig } from "../../lib";
+import { envConfig } from "../../lib/env-parser";
 
 export const errorHandler = (
   err: Error,

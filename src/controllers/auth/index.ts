@@ -4,7 +4,7 @@ import { userLoginSchema, userSchema } from "../../validators/user";
 import { ResponseHandler } from "../../utils";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
-import { envConfig } from "../../lib";
+import { envConfig } from "../../lib/env-parser";
 
 export class AuthController {
   static async register(req: Request, res: Response): Promise<void> {

@@ -6,7 +6,7 @@ import {
   taskUpdateSchema,
 } from "../../validators/task";
 import { ResponseHandler } from "../../utils";
-import { envConfig } from "../../lib";
+import { envConfig } from "../../lib/env-parser";
 import type { AuthRequest } from "../../types";
 import { queryFilterSchema } from "../../validators/pagination";
 import { or } from "@prisma/orm-postgres/orm-client";

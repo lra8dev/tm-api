@@ -1,5 +1,5 @@
 import "dotenv/config";
-import { envSchema, type EnvSchema } from "../validators/env";
+import { envSchema, type EnvSchema } from "../../validators/env";
 
 const loadEnvConfig = (): EnvSchema => {
   const parsed = envSchema.safeParse(process.env);
