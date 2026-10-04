@@ -106,6 +106,18 @@ Task query filtering supports:
 pnpm install
 ```
 
+### Deploy to Vercel
+
+The compiled Express application is exported as the default export from
+`dist/index.js`, which allows Vercel to invoke it as a Node.js serverless
+function. Configure the required `NODE_ENV`, `JWT_SECRET`, and
+`DATABASE_URL` environment variables in the Vercel project settings, then
+deploy from the repository root.
+
+Database connections are established lazily for API requests and reused while
+the serverless instance remains warm. The `/health` endpoint does not require a
+database connection.
+
 ### 2) Configure environment variables
 
 Copy the example file and update the values:
